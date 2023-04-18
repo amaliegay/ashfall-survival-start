@@ -1,1 +1,5 @@
-require("JosephMcKean.ashfallSurvivalStart.items")
+event.register("initialized", function()
+	require("JosephMcKean.ashfallSurvivalStart.chargen")
+	require("JosephMcKean.ashfallSurvivalStart.items")
+	require("JosephMcKean.ashfallSurvivalStart.loneliness")
+end)

@@ -26,6 +26,9 @@ event.register("activate", pray)
 
 ---@param e cellChangedEventData
 local function disableShrineEffect(e)
+    if not tes3.player.data.Ashfall.masartusShrineEffect then
+        return
+    end
 	if e.previousCell and e.previousCell.id:startswith("Masartus") and not e.cell.id:startswith("Masartus") then
 		tes3.player.data.Ashfall.masartusShrineEffect = nil
 		tes3.messageBox("The Masartus Shrine blessing has worn off.")
