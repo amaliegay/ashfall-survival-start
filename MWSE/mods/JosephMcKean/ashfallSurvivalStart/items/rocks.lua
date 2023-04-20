@@ -76,7 +76,7 @@ local function message(e)
 	if readiedWeapon and readiedWeapon.id:find("pick") then
 		tes3.messageBox("I can use the pick axe to mine these rocks.")
 	else
-		tes3.messageBox("If I want to get in the monastery, I need a pick axe to mine these rocks.")
+		tes3.messageBox("I need a pick axe to mine these rocks.")
 	end
 end
 event.register("activate", message)
