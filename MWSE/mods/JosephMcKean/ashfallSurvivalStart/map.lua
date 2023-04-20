@@ -9,8 +9,17 @@ local function onUiEvent(e)
 	if tes3.player.data.ass and tes3.player.data.ass.hasMap then
 		return
 	end
+	if not tes3ui.findMenu("MenuMap") then
+		return
+	end
+	if not e.source then
+		return
+	end
 	local menu = e.source:getTopLevelMenu()
-	if menu.name ~= "MenuMap" then
+	if not menu then
+		return
+	end
+	if menu.id ~= tes3ui.registerID("MenuMap") then
 		return
 	end
 	local worldMap = menu:findChild(tes3ui.registerID("MenuMap_world"))

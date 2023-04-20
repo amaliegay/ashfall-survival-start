@@ -2,6 +2,7 @@ event.register("initialized", function()
 	event.register("loaded", function()
 		tes3.player.data.ass = tes3.player.data.ass or {}
 	end)
+	-- require("JosephMcKean.ashfallSurvivalStart.survivalistsSense")
 	require("JosephMcKean.ashfallSurvivalStart.chargen")
 	require("JosephMcKean.ashfallSurvivalStart.items")
 	require("JosephMcKean.ashfallSurvivalStart.map")
