@@ -1,0 +1,1 @@
+7z a "Ashfall Survival Start.7z" BookArt Docs Meshes MWSE "Ashfall Survival Start-metadata.toml" "Ashfall Survival Start.esp"
