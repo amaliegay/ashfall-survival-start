@@ -3,7 +3,7 @@ name = "Ashfall Survival Start"
 description = "Ashfall Survival Start is an alternate start mod where you are the only survivor of a shipwreck and now stranded on a small, abandoned island."
 repository = "https://github.com/amaliegay/ashfall-survival-start"
 authors = ["JosephMcKean"]
-version = "1.0.2"
+version = "1.0.3"
 
 [dependencies]
 assets = [
