@@ -82,9 +82,6 @@ end
 event.register("activate", message)
 
 local function checkUpdateJournal()
-	if tes3.player.data.ass.rockJournalUpdated then
-		return
-	end
 	if tes3.player.cell.id ~= "Masartus" then
 		return
 	end
@@ -95,10 +92,15 @@ local function checkUpdateJournal()
 	if tes3.player.position:distance(rockRef.position) < 256 then
 		tes3.updateJournal({ id = "jsmk_ass", index = 15, showMessage = true })
 		tes3.player.data.ass.rockJournalUpdated = true
+		return
 	end
+	timer.start({ duration = 1, callback = checkUpdateJournal })
 end
 
 event.register("loaded", function()
 	swings = 0
-	timer.start({ duration = 1, iterations = -1, callback = checkUpdateJournal })
+	if tes3.player.data.ass.rockJournalUpdated then
+		return
+	end
+	timer.start({ duration = 1, callback = checkUpdateJournal })
 end)

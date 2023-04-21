@@ -5,7 +5,7 @@ This mod is an alternate start mod where you are the only survivor of a shipwrec
 ## Walkthrough 
 
 1. Get a pickaxe. 
-   i. Get to Bushcrafting level 30 and craft a Flint Pickaxe
+   i. Get to Bushcrafting level 10 and craft a Flint Pickaxe
    ii. There is an Ebony Pickaxe in the crate in Masartus, Egg Mine
 2. Use the pickaxe to mine the rocks in front of the entrance of Masartus, Monastery. 
 3. Explore the Monastery and pick up the two letivation potions.
@@ -16,7 +16,7 @@ This mod is an alternate start mod where you are the only survivor of a shipwrec
 6. Use the pickaxe to mine the rock that is blocking the way
 7. Go the Monastery through the Egg Mine
 8. Pick up the Map of Masartus
-9. Craft the Raft and place it on open water. 
+9. Get to Bushcrafting level 30 and craft the Raft and place it on open water. 
 10. Activate the Raft and click Sail Home button.
 
 Congratulations! You have won the game!
