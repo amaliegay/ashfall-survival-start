@@ -1,3 +1,5 @@
+local Recipe = require("CraftingFramework").Recipe
+
 local common = require("JosephMcKean.ashfallSurvivalStart.common")
 local log = common.createLogger("chargen")
 
@@ -53,6 +55,7 @@ local function transferCharGenItems(e)
 			tes3.messageBox("Modded starting equipment has been temporarily removed.")
 			transferItems()
 			-- addSpell()
+			Recipe.getRecipe("jsmk_ass_ac_raft"):learn()
 		end,
 	})
 end

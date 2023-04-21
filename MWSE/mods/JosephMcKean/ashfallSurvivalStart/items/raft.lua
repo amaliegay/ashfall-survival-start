@@ -66,6 +66,7 @@ local function registerBushcraftingRecipe(e)
 		additionalMenuOptions = { sailHome },
 		description = "A raft to sail home.",
 		materials = { { material = "wood", count = 14 }, { material = "resin", count = 4 }, { material = "rope", count = 7 }, { material = "straw", count = 1 } },
+		knownByDefault = false,
 		skillRequirements = { ashfall.bushcrafting.survivalTiers.apprentice },
 		soundType = "wood",
 		category = "Structures",
