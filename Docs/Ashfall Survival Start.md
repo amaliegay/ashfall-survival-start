@@ -19,7 +19,12 @@ This mod is an alternate start mod where you are the only survivor of a shipwrec
 9. Get to Bushcrafting level 30 and craft the Raft and place it on open water. 
 10. Activate the Raft and click Sail Home button.
 
-Congratulations! You have won the game!
+Congratulations! You have won the game! To start the Morrowind Main Quest, drag yourself way back to Seyda Neen and talk to the captain Sellus Gravius. 
+
+## General Survival Tips
+
+- To make a campfire, you need a torch. So craft yourself a wood axe and gather resin first.
+- If you get stuck somewhere because you can't levitate, consider bushcrafting tables as scaffoldings. 
 
 ## Credits and Thanks 
 
