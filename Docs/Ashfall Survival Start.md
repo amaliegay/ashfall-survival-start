@@ -23,7 +23,9 @@ Congratulations! You have won the game! To start the Morrowind Main Quest, drag 
 
 ## General Survival Tips
 
-- To make a campfire, you need a torch. So craft yourself a wood axe and gather resin first.
+- To make a campfire, you need a flint and steel or a torch. 
+  - So either craft yourself a wood axe and gather resin for the torch.
+  - Or find a bladed weapon. There is one on top of a floating crate outside the Egg Mine.
 - If you get stuck somewhere because you can't levitate, consider bushcrafting tables as scaffoldings. 
 
 ## Credits and Thanks 

@@ -1,4 +1,7 @@
 event.register("initialized", function()
+	if not tes3.isModActive("Ashfall Survival Start.esp") then
+		return
+	end
 	event.register("loaded", function()
 		tes3.player.data.ass = tes3.player.data.ass or {}
 	end)
@@ -11,7 +14,7 @@ end, { priority = 10 })
 event.register("UIEXP:sandboxConsole", function(e)
 	e.sandbox.detectBranches = function()
 		local marker = tes3.createObject({ id = "marker_error", objectType = tes3.objectType.miscItem })
-		marker.mesh = "merker_error.nif"
+		marker.mesh = "marker_error.nif"
 		for ref in tes3.player.cell:iterateReferences() do
 			if not ref.disabled then
 				if ref.id:startswith("ashfall_branch") or ref.id == "ashfall_stone" or ref.id == "ashfall_flint" then
