@@ -3,6 +3,9 @@ local function onUiEvent(e)
 	if not tes3.player then
 		return
 	end
+	if not tes3.player.cell then
+		return
+	end
 	if not tes3.player.cell.id:startswith("Masartus") then
 		return
 	end

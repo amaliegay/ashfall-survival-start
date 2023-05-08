@@ -4,11 +4,12 @@ event.register("initialized", function()
 	end
 	event.register("loaded", function()
 		tes3.player.data.ass = tes3.player.data.ass or {}
-	end)
+	end, { priority = 10 })
 	-- require("JosephMcKean.ashfallSurvivalStart.survivalistsSense")
 	require("JosephMcKean.ashfallSurvivalStart.chargen")
 	require("JosephMcKean.ashfallSurvivalStart.items")
 	require("JosephMcKean.ashfallSurvivalStart.weather")
+	require("JosephMcKean.ashfallSurvivalStart.restInterrupt")
 end, { priority = 10 })
 
 event.register("UIEXP:sandboxConsole", function(e)

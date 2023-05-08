@@ -8,10 +8,8 @@ local function changeWeather()
 	local randomNumber = math.random()
 	local newWeather = randomNumber < 0.62 and tes3.weather.foggy or tes3.weather.thunder
 	if newWeather == currentWeather then
-		log:debug("Current weather %s, rolled weather %s, not changing", currentWeather, newWeather)
 		return
 	end
-	log:debug("Current weather %s, rolled weather %s", currentWeather, newWeather)
 	weatherController:switchTransition(newWeather)
 end
 
@@ -24,7 +22,6 @@ local function onCellChanged(e)
 	if not cell.id:startswith("Masartus") then
 		return
 	end
-	log:debug("Timer starting")
 	changeWeather()
 end
 event.register("cellChanged", onCellChanged)
