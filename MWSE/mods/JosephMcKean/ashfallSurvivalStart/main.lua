@@ -1,4 +1,7 @@
 event.register("initialized", function()
+	if not tes3.isModActive("Ashfall.esp") then
+		return
+	end
 	if not tes3.isModActive("Ashfall Survival Start.esp") then
 		return
 	end
