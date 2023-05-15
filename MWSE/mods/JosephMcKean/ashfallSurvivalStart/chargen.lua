@@ -31,19 +31,20 @@ end
 
 ---@param e cellChangedEventData
 local function leaveIsland(e)
-	if not tes3.player.data.ass.leftIsland then
+	if tes3.player.data.ass.charGenFinished and not tes3.player.data.ass.returnCharGenItems then
 		if not e.cell.isInterior and not inMasartus(e.cell) then
 			safeRef = safeRef or tes3.getReference("jsmk_ass_co_safe")
 			transferItems({ from = safeRef, to = tes3.player })
 			tes3.messageBox("Modded starting equipment has been added to your inventory.")
 			Recipe.getRecipe(raft.id):unlearn()
-			tes3.player.data.ass.leftIsland = true
+			tes3.player.data.ass.returnCharGenItems = true
 		end
 	end
 end
 event.register("cellChanged", leaveIsland)
 
 local function transferCharGenItems(e)
+	tes3.player.data.ass.charGenFinished = true
 	timer.start({
 		type = timer.simulate,
 		duration = 0.8, -- AotC is 0.7
