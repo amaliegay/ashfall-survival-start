@@ -1,4 +1,5 @@
 local Recipe = require("CraftingFramework").Recipe
+local physicalJournal = include("Spammer.Physical Journal.interop")
 
 local common = require("JosephMcKean.ashfallSurvivalStart.common")
 local log = common.createLogger("chargen")
@@ -20,7 +21,11 @@ local function transferItems(e)
 			tes3.transferItem(
 			{ from = e.from, to = e.to, item = stack.object, count = stack.count, playSound = false, limitCapacity = false, reevaluateEquipment = true })
 		elseif e.from == tes3.player and isVanillaItem[stack.object.id:lower()] then
-			tes3.mobilePlayer:equip({ item = stack.object })
+			if not (tes3.player.object.race.isBeast and stack.object.objectType == tes3.objectType.clothing and stack.object.slot == tes3.clothingSlot.shoes) then
+				tes3.mobilePlayer:equip({ item = stack.object })
+			else
+				log:debug("Prevent beast race from equipping shoes")
+			end
 		end
 	end
 end
@@ -63,6 +68,7 @@ local function transferCharGenItems(e)
 			safeRef = safeRef or tes3.getReference("jsmk_ass_co_safe")
 			transferItems({ from = tes3.player, to = safeRef })
 			Recipe.getRecipe(raft.id):learn()
+			if physicalJournal then tes3.addItem({ reference = tes3.player, item = "spa_IJ_Journal" }) end
 		end,
 	})
 end

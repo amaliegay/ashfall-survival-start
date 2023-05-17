@@ -10,31 +10,19 @@ swings = swings or 0
 
 ---@param e attackEventData
 local function mine(e)
-	if e.reference ~= tes3.player then
-		return
-	end
+	if e.reference ~= tes3.player then return end
 
 	local result = tes3.rayTest({ position = tes3.getPlayerEyePosition(), direction = tes3.getPlayerEyeVector(), ignore = { tes3.player } })
-	if not result then
-		return
-	end
+	if not result then return end
 	local ref = result.reference
-	if not (ref and ref.id:startswith(rockId)) then
-		return
-	end
+	if not (ref and ref.id:startswith(rockId)) then return end
 	local distance = tes3.player.position:distance(result.intersection)
-	if distance > minLookDistance then
-		return
-	end
+	if distance > minLookDistance then return end
 
 	local readiedWeapon = tes3.mobilePlayer.readiedWeapon
-	if not readiedWeapon then
-		return
-	end
+	if not readiedWeapon then return end
 	local readiedWeaponObj = tes3.mobilePlayer.readiedWeapon.object
-	if not readiedWeaponObj.id:lower():find("pick") then
-		return
-	end
+	if not readiedWeaponObj.id:lower():find("pick") then return end
 
 	-- Chopping at close distance with a pick?
 	local swingsNeeded = 6
@@ -66,12 +54,8 @@ event.register("attack", mine, { priority = 10 })
 
 ---@param e activateEventData
 local function message(e)
-	if not e.target then
-		return
-	end
-	if not e.target.object.id:startswith(rockId) then
-		return
-	end
+	if not e.target then return end
+	if not e.target.object.id:startswith(rockId) then return end
 	local readiedWeapon = tes3.mobilePlayer.readiedWeapon and tes3.mobilePlayer.readiedWeapon.object
 	if readiedWeapon and readiedWeapon.id:lower():find("pick") then
 		tes3.messageBox("I can use the pick axe to mine these rocks.")
@@ -82,25 +66,32 @@ end
 event.register("activate", message)
 
 local function checkUpdateJournal()
-	if tes3.player.cell.id ~= "Masartus" then
-		return
+	if tes3.player.data.ass.rockJournalUpdated then return end
+	if not tes3.player.cell.id:startswith("Masartus") then return end
+
+	local rock1Ref = tes3.getReference("jsmk_ass_ac_rock01")
+	if rock1Ref then
+		if tes3.player.position:distance(rock1Ref.position) < 256 then
+			tes3.updateJournal({ id = "jsmk_ass", index = 15, showMessage = true })
+			tes3.player.data.ass.rockJournalUpdated = true
+			return
+		end
 	end
-	local rockRef = tes3.getReference("jsmk_ass_ac_rock01")
-	if not rockRef then
-		return
+
+	local rock3Ref = tes3.getReference("jsmk_ass_ac_rock03")
+	if rock3Ref then
+		if tes3.player.position:distance(rock3Ref.position) < 256 then
+			tes3.updateJournal({ id = "jsmk_ass", index = 16, showMessage = true })
+			tes3.player.data.ass.rockJournalUpdated = true
+			return
+		end
 	end
-	if tes3.player.position:distance(rockRef.position) < 256 then
-		tes3.updateJournal({ id = "jsmk_ass", index = 15, showMessage = true })
-		tes3.player.data.ass.rockJournalUpdated = true
-		return
-	end
+
 	timer.start({ duration = 1, callback = checkUpdateJournal })
 end
 
 event.register("loaded", function()
 	swings = 0
-	if tes3.player.data.ass.rockJournalUpdated then
-		return
-	end
+	if tes3.player.data.ass.rockJournalUpdated then return end
 	timer.start({ duration = 1, callback = checkUpdateJournal })
 end)
