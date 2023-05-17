@@ -19,6 +19,8 @@ local function transferItems(e)
 		if e.from ~= tes3.player or not isVanillaItem[stack.object.id:lower()] then
 			tes3.transferItem(
 			{ from = e.from, to = e.to, item = stack.object, count = stack.count, playSound = false, limitCapacity = false, reevaluateEquipment = true })
+		elseif e.from == tes3.player and isVanillaItem[stack.object.id:lower()] then
+			tes3.mobilePlayer:equip({ item = stack.object })
 		end
 	end
 end

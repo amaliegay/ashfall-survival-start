@@ -3,7 +3,7 @@ name = "Ashfall Survival Start"
 description = "Ashfall Survival Start is an alternate start mod where you are the only survivor of a shipwreck and now stranded on a small, abandoned island."
 repository = "https://github.com/amaliegay/ashfall-survival-start"
 authors = ["JosephMcKean"]
-version = "1.2.3"
+version = "1.2.4"
 
 [dependencies]
 assets = [
@@ -14,7 +14,7 @@ assets = [
 ]
 
 [dependencies.mwse]
-buildnumber = 3210
+buildnumber = 3213
 
 [dependencies.mods."Skills Module"]
 mwse-module = "OtherSkills"
@@ -22,7 +22,7 @@ url = "https://www.nexusmods.com/morrowind/mods/46034"
 
 [dependencies.mods."The Crafting Framework"]
 mwse-module = "CraftingFramework"
-version = "^1.10.0"
+version = "^1.11.1"
 url = "https://www.nexusmods.com/morrowind/mods/51009"
 
 [dependencies.mods."Ashfall"]
@@ -31,5 +31,5 @@ version = "^3.9.6"
 url = "https://www.nexusmods.com/morrowind/mods/49057"
 
 [dependencies.mods."OAAB_Data"]
-version = "^2.1.8"
+version = "^2.1.9"
 url = "https://www.nexusmods.com/morrowind/mods/49042"
