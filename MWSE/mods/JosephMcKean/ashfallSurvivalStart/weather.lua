@@ -6,22 +6,16 @@ local function changeWeather()
 	local weatherController = tes3.worldController.weatherController
 	local currentWeather = weatherController.currentWeather.index
 	local randomNumber = math.random()
-	local newWeather = randomNumber < 0.62 and tes3.weather.foggy or tes3.weather.thunder
-	if newWeather == currentWeather then
-		return
-	end
+	local newWeather = randomNumber < 0.10 and tes3.weather.clear or randomNumber < 0.62 and tes3.weather.foggy or tes3.weather.thunder
+	if newWeather == currentWeather then return end
 	weatherController:switchTransition(newWeather)
 end
 
 ---@param e cellChangedEventData
 local function onCellChanged(e)
 	local cell = e.cell
-	if not cell then
-		return
-	end
-	if not cell.id:startswith("Masartus") then
-		return
-	end
+	if not cell then return end
+	if not cell.id:startswith("Masartus") then return end
 	changeWeather()
 end
 event.register("cellChanged", onCellChanged)
