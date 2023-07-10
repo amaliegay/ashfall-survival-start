@@ -1,7 +1,7 @@
 local common = require("JosephMcKean.ashfallSurvivalStart.common")
 local log = common.createLogger("rocks")
 
-local minLookDistance = 230 -- How close the rock needs to be to activate
+local minLookDistance = 230 
 local rockId = "jsmk_ass_ac_rock"
 local maxSwings = 18
 
