@@ -16,8 +16,9 @@ This mod is an alternate start mod where you are the only survivor of a shipwrec
 6. Use the pickaxe to mine the rock that is blocking the way
 7. Go the Monastery through the Egg Mine
 8. Pick up the Map of Masartus
-9. Get to Bushcrafting level 30 and craft the Raft and place it on open water. 
-10. Activate the Raft and click Sail Home button.
+9. Break the cell wall so you don't need to leave through the egg mine
+10. Get to Bushcrafting level 30 and craft the Raft and place it on open water. 
+11. Activate the Raft and click Sail Home button.
 
 Congratulations! You have won the game! To start the Morrowind Main Quest, drag yourself way back to Seyda Neen and talk to the captain Sellus Gravius. 
 
